@@ -1,0 +1,77 @@
+/* Nav.css */
+
+/* Header Styles */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
+  /* background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+  position: fixed;
+  z-index: 2;
+  min-height: 4rem;
+}
+
+.nav-container {
+  padding-right: 0.875rem; /* px-3.5 */
+  padding-left: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  width: 8em; /* Adjust the width of your logo */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+}
+
+
+/* Menu List */
+.nav-menu {
+  display: flex;
+  gap: 0.25rem; /* gap-x-1 */
+}
+
+.nav-menu.desktop {
+  display: none;
+}
+
+.nav-menu.mobile {
+  display: flex;
+}
+
+
+
+/* Responsive Design for Mobile */
+@media screen and (min-width: 1024px) {
+  .nav-menu.desktop {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-menu.mobile {
+    padding: 0;
+    display: none;
+  }
+  
+  .nav-logo img {
+    width: 8rem; /* size-8 */
+    height: 3rem;
+  }
+  
+}
