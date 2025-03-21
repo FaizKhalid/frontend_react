@@ -52,9 +52,18 @@ export default function DesktopMenu({ menu }) {
           animate={isHover ? "enter" : "exit"}
           variants={subMenuAnimate}
         >
-          <div
-            className={`menu-grid ${menu.gridCols === 3 ? 'grid-cols-3' : menu.gridCols === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}
+         <div
+            className={`menu-grid ${
+              menu.gridCols === 4
+                ? 'grid-cols-4'
+                : menu.gridCols === 3
+                ? 'grid-cols-3'
+                : menu.gridCols === 2
+                ? 'grid-cols-2'
+                : 'grid-cols-1'
+            }`}
           >
+
             {hasSubMenu &&
               menu.subMenu.map((submenu, i) => (
                 <div className="submenu-item" key={i}>

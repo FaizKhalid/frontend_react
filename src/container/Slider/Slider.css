@@ -2,11 +2,11 @@
 
 *{
     user-select: none;
+    box-sizing: border-box;
 }
 #home .app__wrapper{
     position: relative;
     padding: 0;
-    z-index: 1;
 }
 
 img{
@@ -14,7 +14,10 @@ img{
     height: 100%;
     object-fit: cover; 
     animation: zoomEffect 5s linear forwards;
-    z-index: 2;
+}
+
+.app__container{
+    display: none;
 }
 
 a,p{
@@ -26,7 +29,7 @@ a,p{
 }
 
 .slider{
-    position: relative;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     overflow: hidden;

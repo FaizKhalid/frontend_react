@@ -1,33 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-
-
 /* For the sub-menu */
 .sub-menu {
-  position: absolute;
-  top: 4.2rem;
-  padding: 15px;
+  position: fixed; /* Change position to fixed to make it span full screen */
+  top: 4.2rem; /* Adjust the position from top */
+  left: 0; /* Ensure the submenu starts from the left edge */
+  width: 100vw; /* Ensure it spans the full width of the viewport */
+  padding: 0 4rem 0 4rem;
   border-radius: 6px;
   transform-origin: 50% -170px;
   backdrop-filter: blur(7px);
   background-color: rgba(255, 255, 255, 0.072);
   opacity: 0;
-  display: none;
+  visibility: hidden; /* Initially hide the submenu */
   transform: rotateX(-15deg);
-  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s; /* Transition properties */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: baseline;
+  gap: .5rem;
+  z-index: 10; /* Ensure it appears above other elements */
 }
 
+/* Show when active */
 .sub-menu.block {
-  background-color: #e4e4e4;
   opacity: 1;
+  visibility: visible; /* Make the submenu visible when it's active */
   transform: rotateX(0);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+}
+
+/* Hover effect for the sub-menu */
+.group-link:hover .sub-menu {
+  opacity: 1;
+  visibility: visible; /* Make submenu visible on hover */
+  transform: rotateX(0);
 }
 
 /* For the flex-center utility */
@@ -35,7 +42,6 @@
   display: flex;
   align-items: center;
 }
-
 
 /* For the flex-center-between utility */
 .flex-center-between {
@@ -47,12 +53,13 @@
 /* General container for the list item */
 .group-link {
   position: relative;
+  display: inline-block; /* Ensure it takes up space */
+  width: 100%; /* Ensure it has width to contain the full-width submenu */
 }
 
-.menu-span:hover{
+.menu-span:hover {
   color: #e4e4e4;
 }
-
 
 /* Hover effect for the sub-menu */
 .group-link:hover .sub-menu {
@@ -86,18 +93,21 @@
 
 /* Submenu heading */
 .submenu-heading {
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem; /* Thoda space neeche dene ke liye */
-  padding: 0.25rem 0.5rem; /* Thoda padding add karein */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem; /* Space below the heading */
+  padding: 0.25rem 0.5rem; /* Padding for spacing */
   color: #ffffff;
+  display: flex;
+  align-self: baseline;
 }
-
 
 /* Grid for submenu items */
 .menu-grid {
   display: grid;
-  gap: .5rem; /* Items ke beech ka gap */
+  gap: .2rem; /* Items' gap */
+  width: 100%; /* Ensure the grid takes full width */
 }
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, 1fr);
 }
@@ -110,6 +120,10 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr); /* For 4 columns */
+}
+
 /* Each submenu item */
 .submenu-item {
   display: flex;
@@ -117,15 +131,15 @@
   align-items: start;
 }
 
-.submenu-item:hover{
+.submenu-item:hover {
   background-color: rgba(255, 255, 255, 0.51);
 }
-
 
 /* For the submenu box */
 .submenu-box {
   display: flex;
-  align-self: first baseline ;
+  width: 100%; /* Ensure it stretches across the full width */
+  align-self: first baseline;
   gap: 0.5rem;
 }
 

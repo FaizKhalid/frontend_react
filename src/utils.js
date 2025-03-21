@@ -17,134 +17,111 @@ import { MapPin } from "lucide-react";
 import { Database } from "lucide-react";
 import { PanelsTopLeft } from "lucide-react";
 import { PanelTop } from "lucide-react";
+import {ArrowRight} from "lucide-react";
 
 export const Menus = [
   {
-    name: "Features",
-    subMenuHeading: ["Design      ", "Scale"],
+    name: "Porfolio",
+    subMenuHeading: ["Design", "Scale","Third col","Forth col"],
     subMenu: [
       {
         name: "Design",
         desc: "Responsive design",
-        icon: PanelsTopLeft,
+        icon: ArrowRight  ,
       },
       {
         name: "Management",
         desc: "Site control",
-        icon: Bolt,
+        icon: ArrowRight,
       },
       {
         name: "Navigation",
         desc: "Link pages",
-        icon: PanelTop,
+        icon: ArrowRight,
       },
       {
         name: "CMS",
         desc: "Management content",
-        icon: Database,
+        icon: ArrowRight,
+      },
+      {
+        name: "CMS",
+        desc: "Management content",
+        icon: ArrowRight,
+      },
+      {
+        name: "CMS",
+        desc: "Management content",
+        icon: ArrowRight,
+      },
+      {
+        name: "CMS",
+        desc: "Management content",
+        icon: ArrowRight,
+      },
+      {
+        name: "CMS",
+        desc: "Management content",
+        icon: ArrowRight,
       },
     ],
-    gridCols: 2,
+    gridCols: 4,
   },
   {
-    name: "Resources",
+    name: "Service",
     subMenuHeading: ["Get started", "Programs", "Recent"],
     subMenu: [
       {
         name: "Markplace",
         desc: "Browse templates",
-        icon: ShoppingBag,
+        icon: ArrowRight,
       },
       {
         name: "Meetups",
         desc: "Upcoming events",
-        icon: MapPin,
+        icon: ArrowRight,
       },
       {
         name: "Updates",
         desc: "Changelog",
-        icon: BellDot,
+        icon: ArrowRight,
       },
       {
         name: "Academy",
         desc: "Watch lessions",
-        icon: Play,
+        icon: ArrowRight,
       },
       {
         name: "Blog",
         desc: "Posts",
-        icon: BookOpenText,
+        icon: ArrowRight,
       },
       {
         name: "Figma",
         desc: "Plugin",
-        icon: Figma,
+        icon: ArrowRight,
       },
       {
         name: "Experts",
         desc: "Jobs",
-        icon: BriefcaseBusiness,
+        icon: ArrowRight,
       },
       {
         name: "Gallery",
         desc: "Images",
-        icon: Images,
+        icon: ArrowRight,
       },
     ],
     gridCols: 3,
   },
+ 
   {
-    name: "Support",
-    subMenu: [
-      {
-        name: "Help",
-        desc: "Center",
-        icon: CircleHelp,
-      },
-      {
-        name: "Community",
-        desc: "Project help",
-        icon: MessageCircle,
-      },
-      {
-        name: "Emergency",
-        desc: "Urgent issues",
-        icon: TriangleAlert,
-      },
-    ],
-    gridCols: 1,
-  },
-  {
-    name: "Enterprise",
-    subMenuHeading: ["Overview", "Features"],
-    subMenu: [
-      {
-        name: "Enterprise",
-        desc: "Overview",
-        icon: ShieldPlus,
-      },
-      {
-        name: "Collaboration",
-        desc: "Design together",
-        icon: Users,
-      },
-      {
-        name: "Customers",
-        desc: "Stories",
-        icon: Dessert,
-      },
-      {
-        name: "Security",
-        desc: "Your site secured",
-        icon: Lock,
-      },
-    ],
-    gridCols: 2,
-  },
-  {
-    name: "Pricing",
+    name: "Testimonials",
   },
   {
     name: "Contact",
   },
+  {
+    name: "FAQs"
+  }
 ];

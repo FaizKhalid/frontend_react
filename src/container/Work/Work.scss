@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box; /* Ensure box-sizing is border-box globally */
+}
+
 .app__works {
   flex: 1;
   width: 100%;
@@ -10,34 +14,24 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-
-  margin: 4rem 0 2rem;
+  margin: 2rem 0 1rem;
 
   .app__work-filter-item {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: #fff;
-    color: #000;
-    font-weight: 800;
-
+    color:cadetblue;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
     margin: 0.5rem;
-
     &:hover {
-      background-color: var(--secondary-color);
-      color: #fff;
-    }
-
-    @media screen and (min-width: 2000px) {
-      padding: 1rem 2rem;
-      border-radius: 0.85rem;
+      
+      color: #000;
     }
   }
 
   .item-active {
-    background-color: var(--secondary-color);
-    color: #fff;
+    
+    color: black;
   }
 }
 
@@ -48,109 +42,55 @@
   align-items: center;
 
   .app__work-item {
-    width: 270px;
+    width: 200px;
+    height: 300px;
     flex-direction: column;
-
-    margin: 2rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    color: #000;
-
+    margin: 1.5rem;
+    padding: 0;  /* Remove padding to ensure full width */
+    overflow: hidden;
+    position: relative; /* Position the content relative to the item */
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
     transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-    }
-
-    @media screen and (min-width: 2000px) {
-      width: 470px;
-      padding: 1.25rem;
-      border-radius: 0.75rem;
-    }
-
-    @media screen and (max-width: 300px) {
-      width: 100%;
-      margin: 1rem;
+    
+    &:hover .app__work-content {
+      bottom: 0; /* Slide the content up on hover */
+      opacity: 1; /* Show content on hover */
     }
   }
 }
 
 .app__work-img {
   width: 100%;
-  height: 230px;
-
-  position: relative;
-
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5rem;
-    object-fit: cover;
-  }
-
-  @media screen and (min-width: 2000px) {
-    height: 350px;
-  }
-}
-
-.app__work-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  border-radius: 0.5rem;
-  opacity: 0;
-  transition: all 0.3s ease;
-
-  div {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-
-    margin: 1rem;
-    font-family: var(--font-base);
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    svg {
-      width: 50%;
-      height: 50%;
-      color: var(--white-color);
-    }
-  }
+  transition: opacity 1s ease; /* Optional: smooth fade effect */
 }
 
 .app__work-content {
-  padding: 0.5rem;
-  width: 100%;
-  position: relative;
+  padding: 1rem;
+  width: 100%; /* Ensure it takes full width */
+  position: absolute; 
+  bottom: -100%;
+  background-color: var(--primary-color); /* Background color for popup */
+  color: white; /* Text color */
+  opacity: 0; /* Content hidden initially */
+  transition: bottom 0.8s ease, opacity 1s ease; /* Smooth transition for slide-up effect */
+  display: flex;
   flex-direction: column;
-
+  justify-content: flex-start; /* Align items at the top */
+  left: 0; /* Align the content to the left of the parent container */
+  
   h4 {
-    margin-top: 1rem;
-    line-height: 1.5;
-
-    @media screen and (min-width: 2000px) {
-      margin-top: 3rem;
-    }
+    margin-top: 0;
+    line-height: 1;
+    font-weight: bold; /* Title bold */
   }
 
   .app__work-tag {
-    position: absolute;
-
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    background-color: #fff;
-    top: -25px;
+    margin-top: 0.5rem;
+    color: white;
+    font-weight: 600;
+    display: inline-block;
   }
 }

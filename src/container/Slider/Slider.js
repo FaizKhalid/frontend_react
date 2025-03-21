@@ -3,13 +3,13 @@ import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import './Slider.css';
 import { images_slide } from '../../constants';
+import { AppWrap } from '../../wrapper';
 
 
 
 const Slider = () => {
   const [currentImg, setCurrentImg] = useState(1);
   const sliderImagesRef = useRef(null);
-  const prevSlidesRef = useRef([]);
   const counterRef = useRef(null);
   const titlesRef = useRef(null);
   const descripRef = useRef(null);
@@ -17,8 +17,6 @@ const Slider = () => {
   const totalSlides = 5;
 
   const animateSlide = (direction) => {
-    const slides = document.querySelectorAll(".img");
-    const currentSlide = slides[slides.length - 1];
   
     const slideImg = document.createElement("div");
     slideImg.classList.add("img");
@@ -36,13 +34,6 @@ const Slider = () => {
   };
   
 
-  const cleanupSlides = () => {
-    const imgElements = document.querySelectorAll(".slider-images .img");
-    if (imgElements.length > totalSlides) {
-      imgElements[0].remove();
-    }
-  };
-
   // 🔹 Auto Loop Functionality
   let autoSlideInterval;
 
@@ -54,11 +45,6 @@ const Slider = () => {
         setCurrentImg(1); // Reset to the first image
       }
     }, 5000); // Slide change after 3 seconds
-  };
-
-  const restartAutoSlide = () => {
-    clearInterval(autoSlideInterval);
-    startAutoSlide();
   };
 
   useEffect(() => {
@@ -73,20 +59,6 @@ const Slider = () => {
     gsap.registerPlugin(CustomEase);
     CustomEase.create("hop", "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1");
 
-    const updateCounterandTitlePosition = () => {
-      const counterY = -18 * (currentImg - 1);
-      const titleY = -90 * (currentImg - 1);
-      const descripY = -60 * (currentImg - 1);
-
-      gsap.to(counterRef.current, { y: counterY, duration: 1, ease: "hop" });
-      gsap.to(titlesRef.current, { y: titleY, duration: 1, ease: "hop" });
-      gsap.to(descripRef.current, { y: descripY, duration: 1, ease: "hop" });
-    };
-
-    const updateActiveSlidePreview = () => {
-      prevSlidesRef.current.forEach((prev) => prev.classList.remove("active"));
-      prevSlidesRef.current[currentImg - 1].classList.add("active");
-    };
 
     startAutoSlide(); // Start auto-slide when page loads
 
@@ -185,4 +157,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default AppWrap(Slider, 'home', '', false,false);
