@@ -6,11 +6,6 @@
   align-items: center;
 
   padding: 1rem 1rem;
-  background: rgba(255, 255, 255, 0.25);
-  // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   z-index: 2;
 }
@@ -20,21 +15,26 @@
   justify-content: flex-start;
   align-items: center;
 
-  img {
-    width: 200px;
-    height: 35px;
+  /* Ensure the container doesn't restrict the image */
+  width: auto;
+  height: auto;
 
+  img {
+    width: 100%;  /* Set width to 100% to allow resizing */
+    max-width: 150px;  /* Set max-width to the desired size */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: contain;  /* Ensure the logo scales correctly */
+    overflow-x: visible;
+
+    /* Media query for larger screens (2000px and up) */
     @media screen and (min-width: 2000px) {
-      width: 220px;
-      height: 40px;
+      max-width: 220px;  /* Increase max width for larger screens */
     }
-    @media screen and (max-width:900px) {
-      width: 150px;
-      height: 30px;
+
+    /* Media query for smaller screens (900px and below) */
+    @media screen and (max-width: 900px) {
+      max-width: 120px;  /* Decrease max width for small screens */
     }
-  }
-  @media screen and (max-width:900px) {
-    
   }
 }
 
@@ -62,7 +62,7 @@
     }
 
     a {
-      color: var(--gray-color);
+      color: var(--black-color);
       text-decoration: none;
       flex-direction: column;
 
@@ -72,13 +72,13 @@
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: var(--secondary-color);
+        color: #89929e;
       }
     }
 
     &:hover {
       div {
-        background: var(--secondary-color);
+        background: #92a2b6;
       }
     }
   }
@@ -104,6 +104,7 @@
     width: 70%;
     height: 70%;
     color: var(--white-color);
+    
   }
 
   div {
@@ -122,8 +123,6 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
-    background: url('../../assets/bgWhite.png');
     background-color: var(--white-color);
     background-size: cover;
     background-repeat: repeat;

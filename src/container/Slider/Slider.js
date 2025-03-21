@@ -118,21 +118,23 @@ const Slider = () => {
 
       <div className="slider-title">
         <div className="slider-title-wrapper" ref={titlesRef}>
-          <p>imagine incredible</p>
-          <p>simply stunning</p>
-          <p>innovative solutions</p>
-          <p>state of the art</p>
-          <p>best design</p>
+          <p>Global Design</p>
+          <p>Freelance Flexibility</p>
+          <p>Residential & Commercial Specialists</p>
+          <p>Client-Centric</p>
+          <p>Innovation Meets Functionality</p>
         </div>
       </div>
 
-      <div class="slider-description">
-          <div class="slider-description-wrapper" ref={descripRef}>
-              <p>This is a short description about the slider. It appears below the title 1.<br />come in the next line</p>
-              <p>This is a short description about the slider. It appears below the title 2.<br />come in the next line</p>
-              <p>This is a short description about the slider. It appears below the title 3.<br />come in the next line</p>
-              <p>This is a short description about the slider. It appears below the title 4.<br />come in the next line</p>
-              <p>This is a short description about the slider. It appears below the title 5.<br />come in the next line</p>
+      <div className="slider-description">
+          <div className="slider-description-wrapper" ref={descripRef}>
+              <p>Design Without Borders – We bring world-class architecture and interior design to<br />clients globally, breaking geographical barriers with remote yet highly personalized <br/>solutions.
+              </p>
+              <p>Freelance Flexibility, Studio-Grade Quality – With over 4 years of experience<br />Fiverr & Upwork, we combine the agility of a freelancer with the structured <br/>expertise of a top-tier design firm.
+              </p>
+              <p>Residential & Commercial Specialists – Whether it's a modern home, office, retail <br />space, or hospitality project, we craft functional, aesthetic, and impactful <br/>environments tailored to each client’s needs.</p>
+              <p>Client-Centric, Detail-Driven – We work one-on-one with clients, ensuring a<br />collaborative process where every design decision reflects their vision, lifestyle, and <br/>business goals.</p>
+              <p>Innovation Meets Functionality – Our designs are more than just beautiful<br />they integrate practicality, sustainability, and the latest trends to create spaces that stand <br/>out and stand the test of time</p>
 
               </div>  
       </div>

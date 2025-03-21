@@ -1,5 +1,3 @@
-/* Nav.css */
-
 /* Header Styles */
 .header {
   width: 100%;
@@ -7,14 +5,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0rem 1rem;
-  /* background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18); */
   position: fixed;
   z-index: 2;
   min-height: 4rem;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .nav-container {
@@ -40,6 +34,13 @@
   object-fit: contain;
 }
 
+/* Link Styling */
+a, .nav-menu a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent, if needed */
+  font-weight: normal; /* Ensure font weight consistency */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
 
 /* Menu List */
 .nav-menu {
@@ -55,7 +56,21 @@
   display: flex;
 }
 
+/* Styling for Desktop Menu */
+.nav-menu.desktop li {
+  list-style: none;
+}
 
+.nav-menu.desktop li a {
+  padding: 1rem;
+  font-size: 1rem;
+  color: black; /* Default color */
+  transition: color 0.3s ease; /* For hover color change */
+}
+
+.nav-menu.desktop li a:hover {
+  color: #007bff; /* Hover color */
+}
 
 /* Responsive Design for Mobile */
 @media screen and (min-width: 1024px) {
@@ -74,4 +89,14 @@
     height: 3rem;
   }
   
+}
+
+/* Additional hover style for mobile menu */
+.nav-menu.mobile a {
+  padding: 1rem;
+  color: black;
+}
+
+.nav-menu.mobile a:hover {
+  color: #007bff; /* Hover color */
 }

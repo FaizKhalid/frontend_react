@@ -10,8 +10,7 @@
   padding: 0 4rem 0 4rem;
   border-radius: 6px;
   transform-origin: 50% -170px;
-  backdrop-filter: blur(7px);
-  background-color: rgba(255, 255, 255, 0.072);
+  background-color: #fff;
   opacity: 0;
   visibility: hidden; /* Initially hide the submenu */
   transform: rotateX(-15deg);
@@ -93,12 +92,14 @@
 
 /* Submenu heading */
 .submenu-heading {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem; /* Space below the heading */
+  margin-top: 1rem;
   padding: 0.25rem 0.5rem; /* Padding for spacing */
-  color: #ffffff;
+  color: black;
   display: flex;
   align-self: baseline;
+  font-weight: 400;
 }
 
 /* Grid for submenu items */
@@ -151,8 +152,11 @@
 }
 
 .submenu-box:hover .submenu-icon {
-  background-color: #ffffff;
+  background-color: black;
   color: #111827;
+}
+.submenu-box:hover .submenu-icon svg{
+  color: #fff;
 }
 
 /* Submenu title and description */
@@ -162,5 +166,5 @@
 
 .submenu-desc {
   font-size: 0.875rem;
-  color: #e4e4e4;
+  color: #c3c3c3;
 }

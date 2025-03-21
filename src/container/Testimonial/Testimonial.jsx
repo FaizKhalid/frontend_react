@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import { PortableText } from '@portabletext/react';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -30,15 +31,16 @@ const Testimonial = () => {
 
   return (
     <>
-      {testimonials.length && (
+      {testimonials.length > 0 && (
         <>
           <div className="app__testimonial-item app__flex">
             <img src={urlFor(testimonials[currentIndex].imgurl)} alt={testimonials[currentIndex].name} />
             <div className="app__testimonial-content">
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
               <div>
                 <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+              </div>
+              <div className="p">
+              <PortableText value={testimonials[currentIndex].feedback} />
               </div>
             </div>
           </div>
@@ -72,6 +74,6 @@ const Testimonial = () => {
 
 export default AppWrap(
   MotionWrap(Testimonial, 'app__testimonial'),
-  'testimonial',
-  'app__primarybg',
+  'testimonials',
+  'app__whitebg',true,false
 );

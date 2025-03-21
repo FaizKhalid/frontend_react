@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "question": "What services does Gomal Studio offer?",
+    "answer": "We specialize in architectural design, interior design, landscape design, 3D architectural visualization, kitchen & bathroom design, architectural graphics, and Building Information Modeling (BIM). Our expertise covers residential, commercial, and large-scale projects, all handled remotely for a seamless experience."
+  },
+  {
+    "id": 2,
+    "question": "Do you work remotely?",
+    "answer": "Yes! We provide fully remote design services, collaborating with clients worldwide through virtual consultations, 3D renderings, and digital presentations."
+  },
+  {
+    "id": 3,
+    "question": "How do I start a project with Gomal Studio?",
+    "answer": "Simply contact us via our website or email with your project details. We’ll discuss your vision, requirements, and budget, then initiate the design process."
+  },
+  {
+    "id": 4,
+    "question": "What types of architectural projects do you design?",
+    "answer": "We design residential homes, luxury villas, high-rise apartments, commercial buildings, hotels, malls, hospitals, and educational institutions."
+  },
+  {
+    "id": 5,
+    "question": "How do you balance creativity and functionality in architecture?",
+    "answer": "Our designs are visually stunning yet practical, ensuring efficiency, sustainability, and smart space utilization."
+  },
+  {
+    "id": 6,
+    "question": "What makes Gomal Studio’s interiors unique?",
+    "answer": "We create interiors that blend timeless elegance, comfort, and functionality, ensuring every space is tailored to your lifestyle or business needs."
+  },
+  {
+    "id": 7,
+    "question": "Can you design in different interior styles?",
+    "answer": "Yes! We specialize in modern, contemporary, minimalist, classical, and custom interior designs to match your vision."
+  },
+  {
+    "id": 8,
+    "question": "What is Building Information Modeling (BIM)?",
+    "answer": "BIM is a digital process that allows us to create intelligent 3D models of a building, incorporating real-time data about materials, structure, and performance for better design accuracy and efficiency."
+  },
+  {
+    "id": 9,
+    "question": "How does BIM benefit my project?",
+    "answer": "BIM is a digital process that allows us to create intelligent 3D models of a building, incorporating real-time data about materials, structure, and performance for better design accuracy and efficiency."
+  }
+]

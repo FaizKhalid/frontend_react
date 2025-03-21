@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import './MobMenu.css';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { Link } from "react-router-dom";
 
 export default function MobMenu({ Menus }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +70,7 @@ export default function MobMenu({ Menus }) {
                         className="submenu-item"
                       >
                         <Icon size={17} />
-                        {name}
+                        <Link to={subMenu.path}>{subMenu.name}</Link>
                       </li>
                     ))}
                   </motion.ul>
