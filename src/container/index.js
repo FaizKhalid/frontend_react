@@ -5,7 +5,7 @@ import Slider from './Slider/Slider'
 import Accordion from './Accordion/Accordion';
 import Testimonial from './Testimonials/Testimonial';
 import Services from './ourService/service'
-
+import Aboutme from './Aboutme/About'
 
 
 export {
@@ -15,5 +15,6 @@ export {
   Slider,
   Accordion,
   Testimonial,
-  Services
+  Services,
+  Aboutme
 };
