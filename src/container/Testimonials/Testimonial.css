@@ -1,9 +1,13 @@
-
+html,
+body {
+  overflow-x: hidden;
+}
 
 /* Testimonial container */
 .testimonial-container {
-  max-width: 800px;
-  margin-inline: auto;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,44 +21,44 @@
 .title h2 {
   text-transform: capitalize;
   font-weight: bold;
-  font-size: 2.5  rem;
+  font-size: 2.5rem; /* FIXED */
   line-height: 1.1;
 }
+
 .title p {
   color: #484646;
+  font-size: 1.1rem;
 }
 
+/* ============================== */
 /* Slider container */
+/* ============================== */
 .slider-container {
   position: relative;
   user-select: none;
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
 }
 
 .slider-container .quote {
   position: absolute;
   z-index: 0;
-  object-fit: contain;  /* Ensures the whole image is visible */
-  width: 150px;
-  height: 150px;
-  max-width: 100%;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
 }
 
 .slider-container .top-quote {
-  position: absolute;
-  top: -4rem;
-  left: -2.5rem;
+  top: -3rem;
+  left: -2rem;
 }
 
 .slider-container .bottom-quote {
-  position: absolute;
-  bottom: -5rem;
+  bottom: -4rem;
   right: -2rem;
   transform: rotate(180deg) !important;
-  display: block;
-  transform-origin: center;
 }
 
+/* Reviewer image */
 .slider-container .review-img {
   width: 130px;
   height: 130px;
@@ -62,68 +66,51 @@
   object-fit: cover;
   margin-bottom: 1rem;
   margin-inline: auto;
+  display: block;
 }
 
-/* Splide customization */
-.splide__track {
-  border-radius: 1rem;
-}
-
+/* Splide slide */
 .splide__slide {
   display: flex;
   align-items: center;
   background-color: #fff;
-  padding: 3rem 1.875rem;
+  padding: 3rem 2rem;
   border-radius: 1rem;
   gap: 1rem;
+  position: relative;
+  z-index: 5;
 }
 
+.splide__track {
+  border-radius: 1rem;
+}
+
+/* Text content */
 .slider-container .content .text {
   color: #484646;
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  margin-left: .5rem;
 }
 
 .slider-container .content .rating {
   display: inline-block;
   line-height: 1;
-  margin-left: .5rem;
 }
 
 .slider-container .content .star {
   color: #ff6f59;
-  font-size: 1.1rem;
-  
+  font-size: 1.2rem;
 }
 
 .slider-container .content .user {
   font-weight: 600;
   color: #484646;
-  margin-left: .5rem;
+  margin-top: 0.4rem;
 }
 
+/* Pagination */
 .splide__pagination__page.is-active {
   background-color: #ff6f59;
-}
-
-.splide__arrow {
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  font-size: 2rem;
-  color: #505050;
-  font-weight: 300;
-}
-
-.splide__arrow--prev {
-  top: 50%;
-  left: -3.5rem;
-}
-
-.splide__arrow--next {
-  top: 50%;
-  right: -3.5rem;
 }
 
 .splide__pagination__page {
@@ -132,32 +119,100 @@
   opacity: 1;
 }
 
-/* Media Query */
+/* Arrows */
+.splide__arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #505050;
+}
+
+.splide__arrow--prev {
+  left: -2.5rem;
+}
+
+.splide__arrow--next {
+  right: -2.5rem;
+}
+
+/* ============================== */
+/* RESPONSIVE DESIGN */
+/* ============================== */
+
+/* Tablet & smaller */
+@media (max-width: 992px) {
+  .splide__slide {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .slider-container .quote {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    max-width: 100%;
+    padding: 10px 20px;
+  }
+  .splide__slide {
+    flex-direction: column;
+  }
+  .text {
+    text-align: center;
+  }
+  .info {
+    padding-left: 20px;
+  }
+  .slider-container .review-img {
+    width: 90px;
+    height: 90px;
+  }
+  .slider-container .bottom-quote {
+    bottom: -3rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 576px) {
   .splide__slide {
     display: block;
     text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .slider-container .quote {
+    display: none !important;
   }
 
   .splide__arrow {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    top: 50%;
   }
 
   .splide__arrow--prev {
-    left: 0.5rem;
+    left: 0.2rem;
   }
 
   .splide__arrow--next {
-    right: 0.5rem;
+    right: 0.2rem;
   }
 
-  .slider-container .bottom-quote {
-    right: 0;
+  .title h2 {
+    font-size: 2rem;
   }
-  .quote{
-    display: none;
+
+  .slider-container .content .text {
+    font-size: 0.8rem;
   }
-  .bottom-quote{
-    display: none !important;
+}
+
+@media (max-width: 468px) {
+  .splide__arrow--next {
+    right: -2rem;
+  }
+  .splide__arrow--prev {
+    left: -2rem;
   }
 }

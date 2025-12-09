@@ -20,20 +20,20 @@
   height: auto;
 
   img {
-    width: 100%;  /* Set width to 100% to allow resizing */
-    max-width: 150px;  /* Set max-width to the desired size */
-    height: auto;  /* Maintain aspect ratio */
-    object-fit: contain;  /* Ensure the logo scales correctly */
+    width: 100%; /* Set width to 100% to allow resizing */
+    max-width: 150px; /* Set max-width to the desired size */
+    height: 100px; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the logo scales correctly */
     overflow-x: visible;
 
     /* Media query for larger screens (2000px and up) */
     @media screen and (min-width: 2000px) {
-      max-width: 220px;  /* Increase max width for larger screens */
+      max-width: 220px; /* Increase max width for larger screens */
     }
 
     /* Media query for smaller screens (900px and below) */
     @media screen and (max-width: 900px) {
-      max-width: 120px;  /* Decrease max width for small screens */
+      max-width: 120px; /* Decrease max width for small screens */
     }
   }
 }
@@ -99,12 +99,10 @@
   align-items: center;
   background-color: var(--secondary-color);
 
-
   svg {
     width: 70%;
     height: 70%;
     color: var(--white-color);
-    
   }
 
   div {
@@ -118,7 +116,7 @@
 
     width: 80%;
     height: 100vh;
-    
+
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;

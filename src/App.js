@@ -5,15 +5,15 @@ import './App.scss';
 
 const App = () => (
   <div className="app">
-    {/* <Navbar/>
+    <Navbar/>
     <Slider/>
-    <About/>
-    <Work/>
+    <Aboutme/>
     <Services/>
+    <Work/>
     <Testimonial/>
     <Accordion/>
-    <Footer/> */}
-    <Aboutme/>
+    <Footer/>
+    
   </div>
 );
 

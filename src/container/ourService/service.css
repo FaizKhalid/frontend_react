@@ -8,11 +8,22 @@ h3 {
   padding-top: 0.25em;
 }
 
-.vertical-timeline-element-content {
-  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
-    0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
-  padding: 2em 3em !important;
+.vertical-timeline-element-icon {
+  width: 60px !important;
+  height: 60px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
 }
+
+.vertical-timeline-element-icon img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
 
 
 .date {
@@ -21,9 +32,15 @@ h3 {
 }
 
 #description {
-  color:aqua;
+  color:aqua !important;
   margin: 1.5em 0 2em 0;
 }
+.rich-text {
+  color: #333 !important; /* Change this to your desired color */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 
 .button {
   text-decoration: none;

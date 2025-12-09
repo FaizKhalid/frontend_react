@@ -78,7 +78,7 @@ a,p{
 .slider-title {
     position: absolute;
     text-transform: uppercase;
-    top: 45%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100%;
@@ -102,11 +102,11 @@ a,p{
 
 .slider-description{
     position: absolute;
-    top: 55%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 70%;
-    height: 64px;
+    height: 63px;
     clip-path: polygon(0 0,100% 0, 100% 100%,0% 100%);
 }
 .slider-description-wrapper{
@@ -120,7 +120,7 @@ a,p{
 
 .slider-description-wrapper p {
     color: rgb(224, 231, 237);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 20px;
 }
 

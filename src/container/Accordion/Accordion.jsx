@@ -1,26 +1,24 @@
-  import faq from "./FAQ.json";
-  import { useEffect, useState } from "react";
-  import { FAQItem } from './FAQItem';
-  import { AppWrap,MotionWrap } from '../../wrapper';
-  
-  import "./Accordion.scss"
+import faq from "./FAQ.json";
+import { useEffect, useState } from "react";
+import { FAQItem } from "./FAQItem";
+import { AppWrap, MotionWrap } from "../../wrapper";
 
-  const Accordion = () => {
-    const [data, setData] = useState([]);
-    const [activeId, setActiveId] = useState(false); // Track active FAQ by ID
+import "./Accordion.scss";
 
-    useEffect(() => {
-      setData(faq);
-    }, []);
+const Accordion = () => {
+  const [data, setData] = useState([]);
+  const [activeId, setActiveId] = useState(false); // Track active FAQ by ID
 
-    console.log(data);
+  useEffect(() => {
+    setData(faq);
+  }, []);
 
-    const handleToggle = (id) => {
-      setActiveId((prevId) => (prevId === id ? false : id));
-    };
+  const handleToggle = (id) => {
+    setActiveId((prevId) => (prevId === id ? false : id));
+  };
 
-    return (
-      <>
+  return (
+    <>
       <div className="accordion">
         <h1>Accordion</h1>
         <ul className="section-accordion">
@@ -37,15 +35,9 @@
               );
             })}
         </ul>
-        </div>
-      </>
-    );
-  };
-
-  export default AppWrap(
-    MotionWrap(Accordion, 'section_accordion'),
-    'faqs',
-    '',
+      </div>
+    </>
   );
-  
+};
 
+export default AppWrap(MotionWrap(Accordion, "section_accordion"), "faqs", "");

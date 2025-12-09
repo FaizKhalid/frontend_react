@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
-import { client, urlFor } from '../../client';
-import Quote from '../../assets/blockquote.svg';
-import { AppWrap } from '../../wrapper';
-import './Testimonial.css';
+import React, { useEffect, useState } from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
+import { client, urlFor } from "../../client";
+import Quote from "../../assets/blockquote.svg";
+import { AppWrap } from "../../wrapper";
+import "./Testimonial.css";
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         const data = await client.fetch('*[_type == "testimonial"]');
-        console.log("Fetched Reviews:", data);
         setReviews(data);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
       } finally {
-        setLoading(false); // Data fetching complete
+        setLoading(false);
       }
     };
+
     fetchReviews();
   }, []);
 
@@ -38,7 +38,6 @@ const Testimonial = () => {
           <img className="bottom-quote quote" src={Quote} alt="quote" />
         </blockquote>
 
-        {/* Agar loading ho toh ek loader ya placeholder show karein */}
         {loading ? (
           <p className="loading-text">Loading testimonials...</p>
         ) : reviews.length > 0 ? (
@@ -54,21 +53,37 @@ const Testimonial = () => {
             {reviews.map((review) => (
               <SplideSlide key={review._id}>
                 {review.image ? (
-                  <img className="review-img" src={urlFor(review.image).url()} alt={review.name || "Review"} />
+                  <img
+                    className="review-img"
+                    src={urlFor(review.image).url()}
+                    alt={review.name || "Review"}
+                  />
                 ) : (
                   <p>No Image Available</p>
                 )}
+
                 <div className="content">
-                  <p className="text">{review.text || "No review text available"}</p>
+                  <p className="text">
+                    {review.text || "No review text available"}
+                  </p>
+
                   <div className="info">
                     <div className="rating">
-                      {Array.from({ length: review.rating || 0 }, (_, index) => (
-                        <span key={index} className="star">&#9733;</span>
+                      {Array.from({ length: review.rating || 0 }, (_, i) => (
+                        <span key={i} className="star">
+                          &#9733;
+                        </span>
                       ))}
-                      {Array.from({ length: 5 - (review.rating || 0) }, (_, index) => (
-                        <span key={index} className="star">&#9734;</span>
-                      ))}
+                      {Array.from(
+                        { length: 5 - (review.rating || 0) },
+                        (_, i) => (
+                          <span key={i} className="star">
+                            &#9734;
+                          </span>
+                        )
+                      )}
                     </div>
+
                     <p className="user">{review.name || "Anonymous"}</p>
                   </div>
                 </div>
@@ -76,7 +91,7 @@ const Testimonial = () => {
             ))}
           </Splide>
         ) : (
-          <p className="no-reviews">No testimonials available</p> // Fallback UI agar data na ho
+          <p className="no-reviews">No testimonials available</p>
         )}
       </div>
     </section>
@@ -85,8 +100,8 @@ const Testimonial = () => {
 
 export default AppWrap(
   Testimonial,
-  'testimonials',
-  'app__whitebg',
-  true, 
+  "testimonials",
+  "app__whitebg",
+  true,
   false
 );

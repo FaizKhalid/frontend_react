@@ -1,4 +1,3 @@
-import About from './About/About';
 import Footer from './Footer/Footer';
 import Work from './Work/Work';
 import Slider from './Slider/Slider'
@@ -9,7 +8,6 @@ import Aboutme from './Aboutme/About'
 
 
 export {
-  About,
   Footer,
   Work,
   Slider,
